@@ -39,8 +39,8 @@ def test_list_workouts(client):
     items = resp.get_json()
     assert isinstance(items, list)
     assert len(items) == 1
-    assert items["workout"] == "Cycling"
-    assert items["duration"] == 45
+    assert items[0]["workout"] == "Cycling"
+    assert items[0]["duration"] == 45
 
 def test_missing_fields_rejected(client):
     resp = client.post(
