@@ -13,6 +13,8 @@ COPY tests ./tests
 
 # Dev/test stage
 FROM base AS test
+WORKDIR /app
+ENV PYTHONPATH=/app
 CMD ["pytest", "-q"]
 
 # Runtime stage
